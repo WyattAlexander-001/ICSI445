@@ -55,4 +55,22 @@ class ArrayOperationsNumZeroTest
         assertEquals(1,result, "TEST EMPTY ARR");
     }
 
+    @Test
+    void testNullArgument(){
+        int[] x = null;
+        try{
+            ArrayOperations.numZero(x);
+        }catch (NullPointerException e){
+            //NADA
+        }
+    }
+
+    @Test
+    void testNullArgument_2(){
+        int [] x = null;
+        Exception ex = Assertions.assertThrows(NullPointerException.class,
+                () -> {ArrayOperations.numZero(x);});
+        assertEquals("ARR is NULL", ex.getMessage());
+    }
+
 }
